@@ -17,6 +17,7 @@ covid <- readRDS("clean_data/covid_dataset.rds")
 glimpse(covid)
 summary(covid)
 
+########################################
 
 # evaluar la relacion del dgp y los casos por millon de muertes y casos
 # tomar fecha maxima 2023-01-01
@@ -30,6 +31,13 @@ gdp_vs_cases <- covid %>%
 ggplot(gdp_vs_cases, aes(x = total_cases_per_million, y = gdp_per_capita)) +
   geom_point(size = 4, color = "forestgreen")+
   geom_smooth(method = 'lm')+
+  theme_bw()
+
+ggplot(gdp_vs_cases, aes(x = total_cases_per_million, y = gdp_per_capita,
+                         color = continent)) +
+  geom_point(size = 4)+
+  geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
+              aes(group=1),colour="black")+
   theme_bw()
 
 ggplot(gdp_vs_cases, aes(x = total_deaths_per_million, y = gdp_per_capita)) +
@@ -56,4 +64,42 @@ sd(gdp_vs_cases$total_deaths_per_million, na.rm = TRUE)
 median(gdp_vs_cases$total_deaths_per_million, na.rm = TRUE)
 
 
-# prevalencia dm y muertes por covid
+########################################
+
+# esperanza de vida y muertes por covid
+
+ggplot(gdp_vs_cases, aes(x = total_deaths_per_million, y = life_expectancy)) +
+  geom_point(size = 4, color = "forestgreen")+
+  geom_smooth(method = 'lm')+
+  theme_bw()
+
+
+#ggplot(gdp_vs_cases, aes(x = total_cases_per_million, y = diabetes_prevalence)) +
+#  geom_point(size = 4, color = "forestgreen")+
+#  geom_smooth(method = 'lm')+
+#  theme_bw()
+
+
+########################################
+
+# casos vs muertes
+
+ggplot(gdp_vs_cases, aes(x = total_cases_per_million, y = total_deaths_per_million)) +
+  geom_point(size = 4, color = "forestgreen")+
+  geom_smooth(method = 'lm')+
+  theme_bw()
+
+
+# obtener media, mediana, sd de gdp
+
+ggplot(gdp_vs_cases, aes(x = gdp_per_capita)) +
+  geom_histogram(bins = 15)
+
+mean(gdp_vs_cases$gdp_per_capita, na.rm = TRUE)
+sd(gdp_vs_cases$gdp_per_capita, na.rm = TRUE)
+median(gdp_vs_cases$gdp_per_capita, na.rm = TRUE)
+
+# al final se reportaran gdp vs casos
+# y casos vs muertes
+
+
