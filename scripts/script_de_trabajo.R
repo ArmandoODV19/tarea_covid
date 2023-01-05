@@ -16,3 +16,19 @@ covid <- readRDS("clean_data/covid_dataset.rds")
 
 glimpse(covid)
 summary(covid)
+
+
+# evaluar la relacion del dgp y los casos por millon
+# tomar fecha maxima 2023-01-01
+# gdp_per_capita vs total_cases_per_million
+
+gdp_vs_cases <- covid %>%
+  filter(date == "2023-01-01")
+
+
+
+
+
+
+
+# prevalencia dm y muertes por covid
