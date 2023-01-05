@@ -33,12 +33,6 @@ ggplot(gdp_vs_cases, aes(x = total_cases_per_million, y = gdp_per_capita)) +
   geom_smooth(method = 'lm')+
   theme_bw()
 
-ggplot(gdp_vs_cases, aes(x = total_cases_per_million, y = gdp_per_capita,
-                         color = continent)) +
-  geom_point(size = 4)+
-  geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
-              aes(group=1),colour="black")+
-  theme_bw()
 
 ggplot(gdp_vs_cases, aes(x = total_deaths_per_million, y = gdp_per_capita)) +
   geom_point(size = 4, color = "forestgreen")+
