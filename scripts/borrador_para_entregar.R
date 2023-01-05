@@ -27,7 +27,7 @@ covid_limpio <- covid_raw %>%
          continent != "NA")
 
 # cambiando nombre a los continentes
-covid_limpio$continent <- plyr::rename(covid_limpio$continent,
+covid_limpio$continent <- plyr::revalue(covid_limpio$continent,
                                        c("Africa" = "África",
                                          "Asia" = "Asia",
                                          "Europe" = "Europa",
@@ -37,9 +37,9 @@ covid_limpio$continent <- plyr::rename(covid_limpio$continent,
 
 ggplot(covid_limpio, aes(x = total_cases_per_million, y = gdp_per_capita,
                          color = continent)) +
-  geom_point(size = 4)+
+  geom_point(size = 7, alpha = 0.6)+
   geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
-              aes(group=1),colour="black")+
+              aes(group=1),colour="dodgerblue")+
   xlab("Total de casos por millon de habitantes") +
   ylab("Ingreso bruto por habitante") +
   ggtitle('Total de casos por millon de habitantes e ingreso bruto por habitante') +
