@@ -5,8 +5,8 @@ ggplot(covid_limpio, aes(x = total_cases_per_million, y = total_deaths_per_milli
                                 'wheat', 'lightsteelblue', 'chocolate')) +
   geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
               aes(group=1),colour="azure4")+
-  xlab("Casos totales por millón") +
-  ylab("Muertes totales por millón") +
+  xlab("Casos totales por millón de habitantes") +
+  ylab("Muertes totales por millón de habitantes") +
   ggtitle("Casos por millón y muertes por millón") +
   labs(caption = "my caption",
        color = 'Continente') +
