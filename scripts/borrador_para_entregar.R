@@ -37,15 +37,15 @@ covid_limpio$continent <- plyr::revalue(covid_limpio$continent,
 
 
 
-ggplot(covid_limpio, aes(x = total_cases_per_million, y = gdp_per_capita,
+ggplot(covid_limpio, aes(y = total_cases_per_million, x = gdp_per_capita,
                          color = continent)) +
   geom_point(size = 7, alpha = 0.7)+
   scale_color_manual(values = c('dodgerblue', 'forestgreen', 'salmon',
                                 'wheat', 'lightsteelblue', 'chocolate')) +
   geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
               aes(group=1),colour="azure4")+
-  xlab("Total de casos por millon de habitantes") +
-  ylab("Producto interno bruto por habitante") +
+  xlab("Producto interno bruto por habitante") +
+  ylab("Total de casos por millon de habitantes") +
   ggtitle('Total de casos por millon de habitantes y producto interno bruto por habitante') +
   labs(caption = element_text("Fig 1."),
        color = 'Continente') +
@@ -54,9 +54,9 @@ ggplot(covid_limpio, aes(x = total_cases_per_million, y = gdp_per_capita,
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5),
         plot.caption = element_text(hjust = 0)) +
-  stat_regline_equation(label.y = 110000, show.legend = NULL, label.x = 600000,
+  stat_regline_equation(label.y = 750000, show.legend = NULL, label.x = 100000,
                         aes(group = 1, label = ..eq.label..)) +
-  stat_regline_equation(label.y = 105000, show.legend = NULL, label.x = 600000,
+  stat_regline_equation(label.y = 700000, show.legend = NULL, label.x = 100000,
                         aes(group = 1, label = ..rr.label..))
 # guardando la imagen
 
