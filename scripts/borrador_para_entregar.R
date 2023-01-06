@@ -45,13 +45,19 @@ ggplot(covid_limpio, aes(x = total_cases_per_million, y = gdp_per_capita,
   geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
               aes(group=1),colour="azure4")+
   xlab("Total de casos por millon de habitantes") +
-  ylab("Ingreso bruto por habitante") +
+  ylab("Ingreso bruto por habitantes") +
   ggtitle('Total de casos por millon de habitantes e ingreso bruto por habitante') +
   labs(caption = element_text("my caption"),
        color = 'Continente') +
+  scale_x_continuous(labels = label_comma()) +
+  scale_y_continuous(labels = label_comma()) +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5),
-        plot.caption = element_text(hjust = 0))
+        plot.caption = element_text(hjust = 0)) +
+  stat_regline_equation(label.y = 110000, show.legend = NULL, label.x = 600000,
+                        aes(group = 1, label = ..eq.label..)) +
+  stat_regline_equation(label.y = 105000, show.legend = NULL, label.x = 600000,
+                        aes(group = 1, label = ..rr.label..))
 
 # obtener media, mediana, sd de casos por covid por millon de habitantes
 
