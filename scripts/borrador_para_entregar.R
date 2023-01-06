@@ -58,6 +58,12 @@ ggplot(covid_limpio, aes(x = total_cases_per_million, y = gdp_per_capita,
                         aes(group = 1, label = ..eq.label..)) +
   stat_regline_equation(label.y = 105000, show.legend = NULL, label.x = 600000,
                         aes(group = 1, label = ..rr.label..))
+# guardando la imagen
+
+ggsave(path = "imagenes/cases_vs_gdp.png", scale = 1, width = 976, height = 448,
+       units = "px", dpi = 300)
+
+dev.off()
 
 # obtener media, mediana, sd de casos por covid por millon de habitantes
 
@@ -93,6 +99,13 @@ ggplot(covid_limpio, aes(x = total_cases_per_million, y = total_deaths_per_milli
                         aes(group = 1, label = ..eq.label..)) +
   stat_regline_equation(label.y = 5700, show.legend = NULL, label.x = 600000,
                         aes(group = 1, label = ..rr.label..))
+
+# guardando imagen
+
+ggsave(path = "imagenes/cases_vs_deaths.png", scale = 1, width = 976, height = 448,
+       units = "px", dpi = 300)
+
+dev.off()
 
 # obtener media, mediana, sd de muertes por covid por millon de habitantes
 
