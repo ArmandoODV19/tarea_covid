@@ -41,7 +41,7 @@ ggplot(covid_limpio, aes(x = total_cases_per_million, y = gdp_per_capita,
   scale_color_manual(values = c('dodgerblue', 'forestgreen', 'salmon',
                                 'wheat', 'lightsteelblue', 'chocolate')) +
   geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
-              aes(group=1),colour="dodgerblue")+
+              aes(group=1),colour="azure4")+
   xlab("Total de casos por millon de habitantes") +
   ylab("Ingreso bruto por habitante") +
   ggtitle('Total de casos por millon de habitantes e ingreso bruto por habitante') +
@@ -70,7 +70,7 @@ ggplot(covid_limpio, aes(x = total_cases_per_million, y = total_deaths_per_milli
   scale_color_manual(values = c('dodgerblue', 'forestgreen', 'salmon',
                                 'wheat', 'lightsteelblue', 'chocolate')) +
   geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
-              aes(group=1),colour="dodgerblue")+
+              aes(group=1),colour="azure4")+
   xlab("Casos totales por millón") +
   ylab("Muertes totales por millón") +
   ggtitle("Casos por millón y muertes por millón") +
