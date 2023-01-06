@@ -37,9 +37,9 @@ covid_limpio$continent <- plyr::revalue(covid_limpio$continent,
 
 ggplot(covid_limpio, aes(x = total_cases_per_million, y = gdp_per_capita,
                          color = continent)) +
-  geom_point(size = 7, alpha = 0.6)+
+  geom_point(size = 7, alpha = 0.7)+
   scale_color_manual(values = c('dodgerblue', 'forestgreen', 'salmon',
-                                'wheat', 'lightsteelblue', 'orange')) +
+                                'wheat', 'lightsteelblue', 'chocolate')) +
   geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
               aes(group=1),colour="dodgerblue")+
   xlab("Total de casos por millon de habitantes") +
@@ -65,9 +65,9 @@ median(covid_limpio$total_cases_per_million, na.rm = TRUE)
 
 ggplot(covid_limpio, aes(x = total_cases_per_million, y = total_deaths_per_million,
                          color = continent)) +
-  geom_point(size = 7, alpha = 0.6) +
+  geom_point(size = 7, alpha = 0.7) +
   scale_color_manual(values = c('dodgerblue', 'forestgreen', 'salmon',
-                                'wheat', 'lightsteelblue', 'orange')) +
+                                'wheat', 'lightsteelblue', 'chocolate')) +
   geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
               aes(group=1),colour="dodgerblue")+
   xlab("Casos totales por millón") +
