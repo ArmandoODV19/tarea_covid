@@ -44,10 +44,12 @@ ggplot(covid_limpio, aes(y = total_cases_per_million, x = gdp_per_capita,
                                 'wheat', 'lightsteelblue', 'chocolate')) +
   geom_smooth(method = 'lm', na.rm = TRUE, fullrange= TRUE,
               aes(group=1),colour="azure4")+
-  xlab("Producto interno bruto por habitante") +
-  ylab("Total de casos por millon de habitantes") +
-  ggtitle('Total de casos por millon de habitantes y producto interno bruto por habitante') +
-  labs(caption = element_text("Figura 1."),
+  xlab("Producto interno bruto por cápita") +
+  ylab("Casos totales por millón de habitantes") +
+  #ggtitle('Total de casos por millon de habitantes y producto interno bruto por habitante') +
+  labs(caption = element_text("Figura 1.Relación de producto interno bruto per cápita por millón de habitantes. Cada punto representa la información presente en cada uno
+de los 207 países descritos. El color representa las 6 regiones en las cuales se dividen los datos. Se denota un coeficiente de determinación
+de 0.35 entre las variables."),
        color = 'Continente') +
   scale_x_continuous(labels = label_comma()) +
   scale_y_continuous(labels = label_comma()) +
