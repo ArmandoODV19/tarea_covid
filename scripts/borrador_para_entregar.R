@@ -70,11 +70,24 @@ dev.off()
 # obtener media, mediana, sd de casos por covid por millon de habitantes
 
 ggplot(covid_limpio, aes(x = total_cases_per_million)) +
-  geom_histogram(bins = 15)
+  geom_histogram(bins = 15) +
+  theme_bw()
 
 mean(covid_limpio$total_cases_per_million, na.rm = TRUE)
 sd(covid_limpio$total_cases_per_million, na.rm = TRUE)
 median(covid_limpio$total_cases_per_million, na.rm = TRUE)
+
+# obtener media, mediana, sd de gdp_per_capita
+
+ggplot(covid_limpio, aes(x = gdp_per_capita)) +
+  geom_histogram(bins = 15, fill = 'dodgerblue', alpha = 0.7) +
+  theme_bw() +
+  xlab("Producto Interno Bruto per cápita") +
+  ylab("Frecuencia")
+
+mean(covid_limpio$gdp_per_capita, na.rm = TRUE)
+sd(covid_limpio$gdp_per_capita, na.rm = TRUE)
+median(covid_limpio$gdp_per_capita, na.rm = TRUE)
 
 ########################################
 
