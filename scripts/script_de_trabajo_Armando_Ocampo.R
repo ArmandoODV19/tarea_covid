@@ -23,8 +23,8 @@ covid_raw <- readRDS("clean_data/covid_dataset.rds")
 glimpse(covid_raw)
 summary(covid_raw)
 
-# evaluar la relacion del dgp y los casos por millon de muertes y casos
-# tomar fecha maxima 2023-01-01 y eliminar valores nulos
+# evaluar la relacion del dgp y los casos por millon de habitantes
+# tomar fecha maxima 2023-01-01 y eliminar valores nulos en continent
 
 covid_limpio <- covid_raw %>%
   filter(date == "2023-01-01",
@@ -70,7 +70,7 @@ ggsave(path = "imagenes/cases_vs_gdp.png", scale = 1, width = 976, height = 448,
 
 dev.off()
 
-# obtener media, mediana, sd de casos por covid por millon de habitantes
+# obtener media, mediana, sd de casos de covid por millon de habitantes
 
 ggplot(covid_limpio, aes(x = total_cases_per_million)) +
   geom_histogram(bins = 15) +
@@ -94,7 +94,7 @@ median(covid_limpio$gdp_per_capita, na.rm = TRUE)
 
 ########################################
 
-# evaluar la relacion de muertes por millon y los casos por millon
+# evaluar la relacion de muertes por millon y los casos por millon de habitantes
 
 ggplot(covid_limpio, aes(x = total_cases_per_million, y = total_deaths_per_million,
                          color = continent)) +
