@@ -47,9 +47,9 @@ ggplot(covid_limpio, aes(y = total_cases_per_million, x = gdp_per_capita,
   xlab("Producto interno bruto per cápita [Dólares, 2023]") +
   ylab("Casos totales por millón de habitantes") +
   #ggtitle('Total de casos por millon de habitantes y producto interno bruto por habitante') +
-  labs(caption = element_text("Figura 1.Relación de producto interno bruto per cápita por millón de habitantes. Cada punto representa a los países que conforman la
-base de datos. El color detalla 6 regiones geográficas en las cuales se agrupan la información. En la parte superior derecha se muestra
-el coeficiente de determinación y la función que explica el modelo lineal."),
+  labs(caption = element_text("Figura 1.Relación de producto interno bruto per cápita y total de casos positivos por millón de habitantes. Cada punto representa a los países
+que conforman la base de datos. El color detalla 6 regiones geográficas en las cuales se agrupa la información. En la parte superior derecha
+se muestra el coeficiente de determinación (r2 = 0.35) y la función que explica el modelo lineal."),
        color = 'Continente') +
   scale_x_continuous(labels = label_comma()) +
   scale_y_continuous(labels = label_comma()) +
@@ -103,7 +103,9 @@ ggplot(covid_limpio, aes(x = total_cases_per_million, y = total_deaths_per_milli
   xlab("Casos totales por millón de habitantes") +
   ylab("Muertes totales por millón de habitantes") +
   ggtitle("Casos por millón y muertes por millón") +
-  labs(caption = "Figura 2.",
+  labs(caption = "Figura 2. Relación de total de casos positivos por millón de habitantes y muertes totales por millón de habitantes. Cada punto representa a los países que conforman la
+base de datos. El color detalla 6 regiones geográficas en las cuales se agrupan la información. En la parte superior derecha se muestra
+el coeficiente de determinación y la función que explica el modelo lineal.",
        color = 'Continente') +
   scale_x_continuous(labels = label_comma()) +
   scale_y_continuous(labels = label_comma()) +
