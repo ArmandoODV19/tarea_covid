@@ -102,10 +102,10 @@ ggplot(covid_limpio, aes(x = total_cases_per_million, y = total_deaths_per_milli
               aes(group=1),colour="azure4")+
   xlab("Casos totales por millón de habitantes") +
   ylab("Muertes totales por millón de habitantes") +
-  ggtitle("Casos por millón y muertes por millón") +
-  labs(caption = "Figura 2. Relación de total de casos positivos por millón de habitantes y muertes totales por millón de habitantes. Cada punto representa a los países que conforman la
-base de datos. El color detalla 6 regiones geográficas en las cuales se agrupan la información. En la parte superior derecha se muestra
-el coeficiente de determinación y la función que explica el modelo lineal.",
+  #ggtitle("Casos por millón y muertes por millón") +
+  labs(caption = "Figura 2. Relación del total de casos positivos por millón de habitantes y el total de muertes por millón de habitantes. Cada punto representa a
+los países que conforman la base de datos. El color detalla 6 regiones geográficas en las cuales se agrupa la información. En la parte superior
+derecha se muestra el coeficiente de determinación (r2 = 0.23) y la función que explica el modelo lineal.",
        color = 'Continente') +
   scale_x_continuous(labels = label_comma()) +
   scale_y_continuous(labels = label_comma()) +
